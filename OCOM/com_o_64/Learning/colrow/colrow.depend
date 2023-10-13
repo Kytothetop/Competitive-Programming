@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1647851483 source:c:\users\lenovo\onedrive\desktop\com_o_64\learning\colrow\main.cpp
+	<iostream>
+	<iomanip>
+	<math.h>
+
