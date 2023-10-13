@@ -28,7 +28,7 @@ int main()
 	while(t--)
 	{
 		cout << ((not cal()) ? "yes" : "no");
-//		if(t > 1)
+		if(t > 0)
 			cout << '\n';
 	}
 }
