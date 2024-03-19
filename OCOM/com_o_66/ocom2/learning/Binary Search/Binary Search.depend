@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1710729450 source:c:\users\lenovo\onedrive\documents\programming\competitive programming\ocom\com_o_66\ocom2\learning\binary search\main.cpp
+	<iostream>
+	<algorithm>
+	<time.h>
+	<math.h>
+

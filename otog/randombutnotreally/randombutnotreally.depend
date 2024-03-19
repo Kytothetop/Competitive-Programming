@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1647845584 source:c:\users\lenovo\onedrive\desktop\com_o_64\idk\randombutnotreally\main.cpp
+	<iostream>
+	<cstdlib>
+	<ctime>
+

@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1647838852 source:c:\users\lenovo\onedrive\desktop\com_o_64\plab006\main.cpp
+	<iostream>
+	<math.h>
+	<numeric>
+
+1647842956 source:c:\users\lenovo\onedrive\desktop\com_o_64\plab006\plab006.cpp
+	<bits/stdc++.h>
+
