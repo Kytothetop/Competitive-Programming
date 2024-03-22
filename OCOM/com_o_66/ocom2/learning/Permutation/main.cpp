@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-
+#include <fstream>
 using namespace std;
 int num(int lim = 1000)
 {
@@ -7,6 +7,11 @@ int num(int lim = 1000)
 }
 int main()
 {
+	ofstream fileOut("output.txt");
+
+    // Redirecting cout to write to "output.txt"
+    cout.rdbuf(fileOut.rdbuf());
+
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     srand(time(NULL));
@@ -16,21 +21,24 @@ int main()
 //            s.push_back(num());
 //        }
 //    for(auto &e : s)cout << e << '\n';
-	vector<char> c;
-    for(int i =0; i < 6; i++)
+//	vector<char> c;
+	vector<int> c;
+	int n = 5;
+    for(int i =1; i <= n; i++)
         {
-            c.push_back('a' + num(26));
+            c.push_back(i);
+//            c.push_back('a' + num(26));
         }
-    for(auto &e : c)cout << e;
+//    for(auto &e : c)cout << e;
 	sort(c.begin(),c.end());
 //	cout << '\n';
 	int cnt =0;
-    for(auto &e : c)cout << e;
+//    for(auto &e : c)cout << e;
     do
     {
     	cnt++;
-    	cout << "\nCase:\t" << cnt << "\t-> ";
-		for(auto &e : c)cout << e;
+//    	cout << "\nCase:\t" << cnt << "\t-> ";
+		cout << '{';for(int i =0 ; i < n ; i++){cout << c[i]; if(i < n-1) cout << ',';} cout << '}';
     } while (next_permutation(c.begin(),c.end()));
 
 }

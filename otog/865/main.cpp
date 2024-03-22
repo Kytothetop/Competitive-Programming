@@ -1,0 +1,105 @@
+#include <iostream>
+#include <math.h>
+/*
+Testcase 1
+Input:
+4 4 1 4
+1 1
+1
+2
+3
+4
+
+Output:
+1
+6
+17
+32
+
+Testcase 2
+Input:
+4 3 5 3
+1 2
+3 0
+3 1
+0 0
+2 0
+3
+5
+6
+
+Output:
+18
+44
+56
+
+*/
+using namespace std;
+using pii = pair<int,int>;
+    int n, m , k ,q;
+inline int tersect(int tri1, int tri2)
+{
+	// plus (triangle intersect) : x = min(tri1-1,tri2-1)
+	// plus area -> x*(x+1)/2
+//	if(tri1 <= 1 or tri2 <= 1)
+//		return 0;
+	int tt = min(tri1-1,tri2-1);
+	return (tt*(tt+1))/2;
+
+}
+int cal(int day,int x , int y)
+{
+	// sum = (1.0 / 3) * (a * (a + 1) * (2 * a + 1)) - a * a;
+	int sum = (1.0 / 3) * (day * (day + 1) * (2 * day + 1)) - day * day;
+
+
+	// minus -> [index]: |node - border| ->
+	// front: triangle len = day - i - 1
+	// back: triangle len = day - (border - i +1) = day + i -1 - border
+	int up = day - y -1, left = day - x -1;
+	int down = day + y - 1 - n, rright = day + x - 1 - m;
+
+	// minus area -> n*n
+	if(up < 0)up=0;
+	if(down < 0)down=0;
+	if(left < 0)left=0;
+	if(rright < 0)rright=0;
+	sum -= pow(up,2);
+	sum -= pow(down,2);
+	sum -= pow(left,2);
+	sum -= pow(rright,2);
+
+	sum += tersect(up,left);
+	sum += tersect(up,rright);
+	sum += tersect(down,left);
+	sum += tersect(down,rright);
+	return sum;
+}
+int main()
+{
+	ios_base::sync_with_stdio(0); cin.tie(0);
+    cin >> n >> m >> k >> q;
+    int arr[k]; int brr[k];
+    for(int i =0; i < k ; i++)
+	{
+		cin >> arr[i] >> brr[i];
+	}
+    while(q--)
+	{
+		int smm = 0;
+		int temp;
+		cin >> temp;
+		for(int j =0; j < k; j++)
+			smm += cal(temp-j, arr[j], brr[j]);
+		cout << smm << '\n';
+	}
+    // for each starting fish
+	// 1
+	// 1 + 4*1
+	// 1 + 4*1 + 4*2
+
+
+
+
+
+}
