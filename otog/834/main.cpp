@@ -21,7 +21,8 @@ std::string morseToAlphabet(std::string morse) {
 
     while (iss >> word) {
         if (morseToAlpha.find(word) != morseToAlpha.end()) {
-				std::cout << char(morseToAlpha[word] - 'A' - 7 + 'T')<< ' ';
+//				std::cout << char(morseToAlpha[word] - 'A' - 7 + 'T')<< ' ';
+				std::cout << char(morseToAlpha[word])<< ' ';
             result += morseToAlpha[word];
         }
     }

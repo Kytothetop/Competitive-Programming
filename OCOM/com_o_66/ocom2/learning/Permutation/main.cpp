@@ -7,10 +7,6 @@ int num(int lim = 1000)
 }
 int main()
 {
-	ofstream fileOut("output.txt");
-
-    // Redirecting cout to write to "output.txt"
-    cout.rdbuf(fileOut.rdbuf());
 
     ios_base::sync_with_stdio(0);
     cin.tie(0);
@@ -37,8 +33,12 @@ int main()
     do
     {
     	cnt++;
-//    	cout << "\nCase:\t" << cnt << "\t-> ";
-		cout << '{';for(int i =0 ; i < n ; i++){cout << c[i]; if(i < n-1) cout << ',';} cout << '}';
+    	cout << "\nCase:\t" << cnt << "\t-> ";
+		for(int i=0; i < n ; i++){
+			cout << c[i] << ' ';
+		}
+//		cout << '\n';
+//		cout << '{';for(int i =0 ; i < n ; i++){cout << c[i]; if(i < n-1) cout << ',';} cout << '}';
     } while (next_permutation(c.begin(),c.end()));
 
 }
